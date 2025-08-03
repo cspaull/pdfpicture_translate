@@ -271,20 +271,26 @@ class _EnhancedUploadAreaState extends State<EnhancedUploadArea>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                _buildFeatureItem(
-                                  Icons.security,
-                                  'Bảo mật',
-                                  Colors.green,
+                                Flexible( // Added Flexible
+                                  child: _buildFeatureItem(
+                                    Icons.security,
+                                    'Bảo mật',
+                                    Colors.green,
+                                  ),
                                 ),
-                                _buildFeatureItem(
-                                  Icons.speed,
-                                  'Nhanh chóng',
-                                  Colors.blue,
+                                Flexible( // Added Flexible
+                                  child: _buildFeatureItem(
+                                    Icons.speed,
+                                    'Nhanh chóng',
+                                    Colors.blue,
+                                  ),
                                 ),
-                                _buildFeatureItem(
-                                  Icons.high_quality,
-                                  'Chất lượng cao',
-                                  Colors.orange,
+                                Flexible( // Added Flexible
+                                  child: _buildFeatureItem(
+                                    Icons.high_quality,
+                                    'Chất lượng cao',
+                                    Colors.orange,
+                                  ),
                                 ),
                               ],
                             ),
@@ -312,7 +318,7 @@ class _EnhancedUploadAreaState extends State<EnhancedUploadArea>
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              'File được xử lý an toàn và tự động xóa sau 24h',
+                              'File được xử lý và tự động xóa sau 24h',
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: Colors.blue[700],
                                 fontSize: 12,
