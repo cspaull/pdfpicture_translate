@@ -14,7 +14,7 @@ class TranslationJobCard extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { // This 'context' will be used
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -47,10 +47,10 @@ class TranslationJobCard extends StatelessWidget {
                   ),
                 ),
                 PopupMenuButton(
-                  itemBuilder: (context) => [
+                  itemBuilder: (popupContext) => [ // Use 'popupContext' for items if needed, but FileUtils takes TranslationJobCard's 'context'
                     if (job.status == TranslationStatus.completed && job.outputPath != null)
                       PopupMenuItem(
-                        onTap: () => FileUtils.openFile(job.outputPath!),
+                        onTap: () => FileUtils.openFile(context, job.outputPath!), // Using TranslationJobCard's 'context'
                         child: const Row(
                           children: [
                             Icon(Icons.open_in_new),
@@ -61,7 +61,7 @@ class TranslationJobCard extends StatelessWidget {
                       ),
                     if (job.status == TranslationStatus.completed && job.outputPath != null)
                       PopupMenuItem(
-                        onTap: () => FileUtils.shareFile(job.outputPath!),
+                        onTap: () => FileUtils.shareFile(job.outputPath!), // shareFile might also need context if it shows SnackBars
                         child: const Row(
                           children: [
                             Icon(Icons.share),
@@ -88,6 +88,7 @@ class TranslationJobCard extends StatelessWidget {
             const SizedBox(height: 12),
             
             // Status and progress
+            // ... (rest of your status and progress UI remains the same)
             Row(
               children: [
                 _buildStatusIcon(context),
@@ -171,7 +172,7 @@ class TranslationJobCard extends StatelessWidget {
                 const Spacer(),
                 if (job.status == TranslationStatus.completed && job.outputPath != null)
                   ElevatedButton.icon(
-                    onPressed: () => FileUtils.openFile(job.outputPath!),
+                    onPressed: () => FileUtils.openFile(context, job.outputPath!), // Using TranslationJobCard's 'context'
                     icon: const Icon(Icons.download, size: 16),
                     label: const Text('Mở'),
                     style: ElevatedButton.styleFrom(
