@@ -24,7 +24,7 @@
 ```
 
 ## 🚀 Cài đặt và chạy
-Trước khi chạy backend,vào ui/lib/service/pdf_translation_service.dart thêm địa chỉ ip của máy bạn muốn chạy backend vào vd '192.168.1.x:8000'
+Trước khi chạy backend,vào ui/lib/service/pdf_translation_service.dart thêm địa chỉ ip của máy bạn muốn chạy backend vào, ví dụ như '192.168.x.x:8000'
 ### Backend (Python Flask)
 
 1. **Cài đặt Python dependencies:**
