@@ -1,6 +1,7 @@
 # PDF Translator App
 
 Ứng dụng Flutter cho phép dịch văn bản trong file PDF sử dụng OCR và Google Translate API.
+Ứng dụng chỉ dùng trong mục đích thử nghiệm và chỉ có thể sử dụng hoàn chỉnh khi thiết bị sử dụng và máy chạy backend trên dùng 1 server
 
 ## ✨ Tính năng
 
