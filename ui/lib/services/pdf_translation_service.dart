@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 
 class PdfTranslationService {
   final Dio _dio = Dio();
-  static const String _baseUrl = 'http://192.168.1.16:8000'; //địa chỉ ip của máy chạy backend
+  static const String _baseUrl = ''; //địa chỉ ip của máy chạy backend
 
   Future<String> translatePdf({
     required String inputPath,
